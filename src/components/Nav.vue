@@ -16,11 +16,11 @@
                     >Profile</router-link
                 >
             </li>
-            <li class="nav-item">
-                <router-link class="nav-link" to="/login">Login</router-link>
+            <li class="nav-item" v-if="email">
+                <p class="nav-link" @click="logout">Logout</p>
             </li>
-            <li class="nav-item">
-                <router-link class="nav-link" to="/logout">Logout</router-link>
+            <li class="nav-item" v-else>
+                <router-link class="nav-link" to="/login">Login</router-link>
             </li>
         </ul>
     </div>
@@ -29,6 +29,17 @@
 <script>
 export default {
     name: "Nav",
+    data() {
+        return {
+            email: true,
+        };
+    },
+    methods: {
+        logout() {
+            localStorage.clear();
+            this.email = false;
+        },
+    },
 };
 </script>
 
