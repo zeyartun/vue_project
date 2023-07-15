@@ -1,9 +1,9 @@
-import Home from '@/components/Home';
-import Profile from '@/components/Profile';
-import Product from '@/components/Product';
-import ProductDetail from '@/components/ProductDetail';
-import Login from '@/components/Login';
-import Logout from '@/components/Logout';
+import Home from './components/Home';
+import Profile from './components/Profile';
+import Product from './components/Product';
+import ProductDetail from './components/ProductDetail';
+import Login from './components/Login';
+import Logout from './components/Logout';
 import {createRouter , createWebHashHistory} from 'vue-router'
 
 const routes = [
