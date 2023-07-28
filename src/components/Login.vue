@@ -2,7 +2,7 @@
     <div>
         <div class="row justify-content-center">
             <div class="p-3 col-md-4">
-                <form v-on:submit="login">
+                <form v-on:submit.prevent="login">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label"
                             >Email address</label
@@ -70,6 +70,7 @@ export default {
             if (this.email == "john@gmail.com" && this.password == "m38rmF$") {
                 this.$router.push("/profile");
                 localStorage.setItem("email", this.email);
+                this.$emit("loginSuccessEmit");
             } else {
                 this.$router.push("/login");
             }

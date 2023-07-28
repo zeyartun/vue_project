@@ -29,15 +29,18 @@
 
 <script>
 import axios from "axios";
-import router from "vue-router";
+import GetData from "../custom/GetData";
 export default {
     name: "Product",
+    mixins: [GetData],
     data() {
         return {
             products: [],
         };
     },
-    methods: {},
+    beforeMount() {
+        this.resData;
+    },
     created() {
         axios.get("https://fakestoreapi.com/products").then((res) => {
             this.products = res.data;
